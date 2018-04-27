@@ -1,0 +1,28 @@
+body {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	font-family: sans-serif;
+}
+
+.App {
+	text-align: center;
+}
+
+.App-header {
+	background-color: #222;
+	height: 7vw;
+	padding: 20px;
+	color: white;
+}
+.canvas {
+	background-color: lightgray;
+}
+.App-title {
+	font-size: 1.8em;
+	letter-spacing: 4px;
+}
+
+button:hover {
+	background-color: #1b84d8;
+}
