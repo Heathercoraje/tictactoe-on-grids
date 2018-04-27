@@ -1,0 +1,19 @@
+{
+  "name": "tictactoe-on-grids",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Heathercoraje/tictactoe-on-grids.git"
+  },
+  "author": "heathercoraje",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Heathercoraje/tictactoe-on-grids/issues"
+  },
+  "homepage": "https://github.com/Heathercoraje/tictactoe-on-grids#readme"
+}
