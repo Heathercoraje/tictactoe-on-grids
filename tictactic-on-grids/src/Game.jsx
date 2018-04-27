@@ -4,7 +4,7 @@ import Grids from './Grids';
 
 class Game extends Component {
 	state = {
-		grids: 70,
+		grids: 60,
 		currentPlayer: 'X',
 		winner: null
 	};
@@ -25,23 +25,23 @@ class Game extends Component {
 			currentPlayer: nextPlayer
 		});
 	};
+	setPlayer = val => {
+		this.setState({
+			currentPlayer: val
+		});
+	};
 	render() {
 		return (
 			<div className="App">
 				<header className="App-header">
 					<h1 className="App-title">TicTicToe on Grids</h1>
-					<div className="container-buttons">
-						<button className="playerInfo">
-							Player : {this.state.currentPlayer}
-						</button>
-						<button className="button-reset">Reset</button>
-					</div>
 				</header>
 				<Grids
 					{...this.state}
 					setWinner={this.setWinner}
 					changePlayer={this.changePlayer}
 					reset={this.reset}
+					setPlayer={this.setPlayer}
 				/>
 			</div>
 		);

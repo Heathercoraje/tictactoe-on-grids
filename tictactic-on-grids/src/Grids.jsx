@@ -8,9 +8,21 @@ class Grids extends Component {
 		O: []
 	};
 	componentDidMount() {
+		this.setPlayer();
 		this.drawBoard(this.props.grids);
 	}
 
+	setPlayer = () => {
+		swal({
+			title: 'Which player to start?',
+			buttons: {
+				O: true,
+				X: true
+			}
+		}).then(val => {
+			this.props.setPlayer(val);
+		});
+	};
 	isIn = (cell, cells) => {
 		const exist = cells.filter(c => c[0] === cell[0] && c[1] === cell[1]);
 		return exist;
@@ -39,7 +51,7 @@ class Grids extends Component {
 		this.drawBoard(grids);
 	};
 	alertOccuied = () => {
-		swal('This grid is occupied!', 'Choose an empty grid.');
+		swal('This grid is occupied', 'Choose an empty grid.');
 	};
 	alertWinner = winner => {
 		swal(`Winner is ${winner}`, 'Click OK and play again!').then(val => {
@@ -47,13 +59,14 @@ class Grids extends Component {
 		});
 	};
 
-	resetGame = (grids, player) => {
+	resetGame = grids => {
 		this.setState({
 			X: [],
 			O: []
 		});
 		this.redrawBoard(grids);
 		this.props.reset(); // winner == null
+		this.setPlayer();
 	};
 
 	handleClick = event => {
@@ -93,8 +106,18 @@ class Grids extends Component {
 
 	render() {
 		let grids = this.props.grids;
+		let player = this.props.currentPlayer;
 		return (
-			<div>
+			<div className="grids">
+				<div className="button-bar">
+					<button className="playerInfo">NEXT : {player}</button>
+					<button
+						className="button-reset"
+						onClick={() => this.resetGame(grids)}
+					>
+						RESTART
+					</button>
+				</div>
 				<canvas
 					id="canvas"
 					className="canvas"
