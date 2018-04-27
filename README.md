@@ -1,4 +1,5 @@
 # Tic Tac Toe on Grids
 
-**Play Tic Tac Toe on Grids :pig**
-Click [here](https://tictactoe-on-grids.surge.sh/) and check it out!
+<img src="tictactoe.png" width="800" display="inline">
+
+Click [here](https://tictactoe-on-grids.surge.sh/) and play it now!
