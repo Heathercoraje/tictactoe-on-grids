@@ -29,6 +29,7 @@ class Grids extends Component {
 			context.lineTo(bw, 0.5 + x);
 		}
 		context.strokeStyle = 'black';
+		context.font = '25px Do Hyeon';
 		context.stroke();
 	};
 	redrawBoard = grids => {

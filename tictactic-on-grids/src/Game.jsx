@@ -30,6 +30,12 @@ class Game extends Component {
 			<div className="App">
 				<header className="App-header">
 					<h1 className="App-title">TicTicToe on Grids</h1>
+					<div className="container-buttons">
+						<button className="playerInfo">
+							Player : {this.state.currentPlayer}
+						</button>
+						<button className="button-reset">Reset</button>
+					</div>
 				</header>
 				<Grids
 					{...this.state}
