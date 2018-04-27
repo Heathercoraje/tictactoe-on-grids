@@ -98,7 +98,7 @@ const diagnolCheck = coords => {
 	return winner;
 };
 
-const vhCheck = coords => {
+const verticalHorizontalCheck = coords => {
 	const clickedPoints = coords;
 	let winner = false;
 	let pointForCheck;
@@ -168,4 +168,4 @@ const vhCheck = coords => {
 	return winner;
 };
 
-module.exports = { diagnolCheck, vhCheck };
+module.exports = { diagnolCheck, verticalHorizontalCheck };

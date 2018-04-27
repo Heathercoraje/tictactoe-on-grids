@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { diagnolCheck, vhCheck } from './checkWinner';
+import { diagnolCheck, verticalHorizontalCheck } from './checkWinner';
 import swal from 'sweetalert';
 const size = 30;
 class Grids extends Component {
@@ -54,7 +54,7 @@ class Grids extends Component {
 		swal('This grid is occupied', 'Choose an empty grid.');
 	};
 	alertWinner = winner => {
-		swal(`Winner is ${winner}.  Click OK and play again!`).then(val => {
+		swal(`Winner is ${winner}`, 'Click OK and replay the game!').then(val => {
 			this.resetGame(this.props.grids, this.props.currentplayer);
 		});
 	};
@@ -94,7 +94,7 @@ class Grids extends Component {
 				}
 			});
 
-			if (diagnolCheck(cells) || vhCheck(cells)) {
+			if (diagnolCheck(cells) || verticalHorizontalCheck(cells)) {
 				this.props.setWinner(player);
 				this.alertWinner(player);
 			}
