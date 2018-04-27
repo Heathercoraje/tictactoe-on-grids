@@ -20,7 +20,7 @@ class Grids extends Component {
 				X: true
 			}
 		}).then(val => {
-			this.props.setPlayer(val);
+			this.props.setPlayer(val || 'X');
 		});
 	};
 	isIn = (cell, cells) => {
@@ -54,7 +54,7 @@ class Grids extends Component {
 		swal('This grid is occupied', 'Choose an empty grid.');
 	};
 	alertWinner = winner => {
-		swal(`Winner is ${winner}`, 'Click OK and play again!').then(val => {
+		swal(`Winner is ${winner}.  Click OK and play again!`).then(val => {
 			this.resetGame(this.props.grids, this.props.currentplayer);
 		});
 	};
@@ -84,8 +84,8 @@ class Grids extends Component {
 		if (!this.isIn(cell, occupied).length) {
 			let cells = this.state[player].slice();
 			cells.push(cell);
-			context.font = '25px Do Hyeon';
-			context.fillText(player, x_cord * 30 + 9, y_cord * 30 + 24);
+			context.font = '25px Arial';
+			context.fillText(player, x_cord * 30 + 7, y_cord * 30 + 24);
 			this.setState(() => {
 				if (player === 'X') {
 					return { X: cells };
